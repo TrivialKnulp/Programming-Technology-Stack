@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 def word_stats(text)
   words = text.scan(/[[:alpha:]][[:alpha:]'’-]*/)
 

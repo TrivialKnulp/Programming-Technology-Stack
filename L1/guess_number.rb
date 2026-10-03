@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 def play_game
   secret   = rand(1..100)
   attempts = 0
