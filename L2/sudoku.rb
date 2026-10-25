@@ -32,7 +32,6 @@ def find_conflict(board, r, c, n)
     return "Число #{n} уже є в цьому стовпці." if i != r && board[i][c] == n
   end
 
-  # Верхній лівий кут блока 2x2
   block_r = r / 2 * 2
   block_c = c / 2 * 2
   2.times do |i|
