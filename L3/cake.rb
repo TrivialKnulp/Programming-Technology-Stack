@@ -101,13 +101,12 @@ class CakeSlicer
   def find_cuts(current_pieces)
     # Базовий випадок: якщо ми знайшли потрібну кількість шматків
     if current_pieces.size == @num_pieces
-      @all_solutions << current_pieces.dup # Додаємо копію рішення
+      @all_solutions << current_pieces.dup 
       return
     end
 
-    # Знаходимо першу незайняту клітинку, з якої почнемо будувати новий шматок
     start_r, start_c = find_first_free_cell
-    return if start_r == -1 # Всі клітинки зайняті, але ми не знайшли достатньо шматків
+    return if start_r == -1 
 
     # Спроба створити прямокутник, починаючи з (start_r, start_c)
     # Перебираємо всі можливі нижні праві кути прямокутника (r2, c2)
@@ -125,7 +124,6 @@ class CakeSlicer
         raisins_in_piece = @cake.count_raisins_in_rect(start_r, start_c, r2, c2)
 
         if raisins_in_piece == 1
-          # Якщо прямокутник валідний, додаємо його до поточного рішення
           piece_content = @cake.get_piece_content(start_r, start_c, r2, c2)
           current_pieces << piece_content
 
